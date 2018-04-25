@@ -1,4 +1,4 @@
-.ui.five.column.stackable.grid
+.ui.six.column.stackable.grid
   .row
     .column
       = link_to 'https://www.linkedin.com/in/gmuraleekrishna', target: '_blank' do
@@ -20,6 +20,11 @@
         = semantic_icon(:stack, :overflow, :big)
         .content
           Stack Overflow
+    .column
+      = link_to 'https://www.coursera.org/user/a6fcf1d6eb7e788b6cb2a36293070e5b', target: '_blank' do
+        %img.coursera.big.icon{ src: 'https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/apple-touch-icon-152x152.png'}
+        .content
+          Coursera
     .column
       = mail_to 'muraleekrishnagc@gmail.com' do
         = semantic_icon(:mail, :outline, :big)
