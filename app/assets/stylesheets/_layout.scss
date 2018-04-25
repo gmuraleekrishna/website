@@ -3,6 +3,12 @@ html, body {
   font-size: 24px;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  height: calc(97.5vh);
+}
+
 // https://github.com/Semantic-Org/Semantic-UI/issues/1070
 ul.ui.list {
   li.item:before {
@@ -21,6 +27,7 @@ header {
 }
 
 main {
+  flex: 1;
   .grid {
     margin-top: 0 !important;
   }
@@ -31,11 +38,23 @@ main {
 }
 
 footer {
+  margin-top: 0.6em;
   #copyleft {
     display: inline-block;
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
+  }
+  .made-with-love {
+    font-size: 0.6em;
+    text-align: center;
+    display: block;
+    .heart {
+      padding-left: 4px;
+    }
+  }
+  div.ui.divider {
+    margin: 0.4em;
   }
 }
 

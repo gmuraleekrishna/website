@@ -1,14 +1,21 @@
+%p.made-with-love
+  Made with
+  %span
+    = semantic_icon(:heart, :small)
+  on
+  %span.bold
+    = link_to 'http://rubyonrails.org', target: '_blank' do
+      Ruby on Rails
 .ui.divider
-
-.ui.computer.reversed.center.aligned.three.column.grid
+.ui.computer.reversed.center.three.column.grid
   .middle.aligned.row
-    .sixteen.wide.mobile.sixteen.wide.tablet.four.wide.computer.column
+    .sixteen.wide.mobile.sixteen.wide.tablet.four.wide.computer.center.aligned.column
       .ui.tiny.label
         %p
           = semantic_icon(:github, :alternate, :large)
           Source code on
-          = link_to 'GitHub', 'https://github.com/gmuraleekrishna/website'
-    .sixteen.wide.mobile.sixteen.wide.tablet.eight.wide.computer.column
+          = link_to 'GitHub', 'https://github.com/gmuraleekrishna/website', target: '_blank'
+    .sixteen.wide.mobile.sixteen.wide.tablet.eight.wide.computer.center.aligned.column
       %p#license
         %small
           %span#copyleft &copy;

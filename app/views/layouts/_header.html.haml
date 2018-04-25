@@ -1,10 +1,9 @@
-.ui.center.aligned.two.column.vertically.padded.grid
-  .row
-    .ten.wide.tablet.only.column
-    .twelve.wide.computer.only.column
-    .ten.wide.mobile.six.wide.tablet.four.wide.computer.column
-      = link_to asset_path("resume.pdf"), target: '_blank' do
-        .resume-download
-          = semantic_icon(:download, :small)
-          %span.content.right
-            My Resume
+.ui.center.aligned.two.column.vertically.padded.grid.row
+  .ten.wide.tablet.only.column
+  .thirteen.wide.computer.only.column
+  .ten.wide.mobile.six.wide.tablet.three.wide.computer.column
+    = link_to asset_path("resume.pdf"), target: '_blank' do
+      .resume-download
+        = semantic_icon(:download, :small)
+        %span.content.right
+          My Resume
