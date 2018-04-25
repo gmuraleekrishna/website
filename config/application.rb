@@ -25,7 +25,8 @@ module Portfolio
     # Locales
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:en]
-
+    config.assets.enabled = true
+    config.assets.paths << "#{Rails.root}/app/assets/files"
     # Generators
     config.generators do |g|
       g.assets false
