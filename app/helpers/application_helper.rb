@@ -35,13 +35,13 @@ module ApplicationHelper
         type: 'image/png'
       },
       {
-        href: asset_path('apple-touch-icon-144x144.png', skip_pipeline: true),
+        href: asset_path('apple-touch-icon.png', skip_pipeline: true),
         rel: 'apple-touch-icon-precomposed',
         sizes: '144x144',
         type: 'image/png'
       },
       {
-        href: asset_path('apple-touch-icon-152x152.png', skip_pipeline: true),
+        href: asset_path('android-chrome-192x192.png', skip_pipeline: true),
         rel: 'apple-touch-icon-precomposed',
         sizes: '152x152',
         type: 'image/png'

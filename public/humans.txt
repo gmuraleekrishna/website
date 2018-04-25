@@ -1,12 +1,12 @@
 /*TEAM*/
-  Web developer: David Montesdeoca
-  Contact: backpackerhh[at]gmail[dot]com
-  Twitter: @backpackerhh
-  From: Las Palmas de Gran Canaria, Canary Islands, Spain
-  Location: Madrid, Spain
+  Web developer: Muraleekrishna Gopinathan
+  Contact: muraleekrisnnagc[at]gmail[dot]com
+  Twitter: @MuraleekrishnaG
+  From: Kerala, India
+  Location: Canberra, Australia
 
 /*SITE*/
   Last update: 2018/04/14
-  Language: English / Spanish
+  Language: English
   Doctype: HTML5
-  IDE: Sublime Text
+  IDE: Emacs,VS Code
