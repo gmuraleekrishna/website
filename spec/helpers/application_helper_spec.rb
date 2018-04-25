@@ -27,7 +27,7 @@ RSpec.describe ApplicationHelper, type: :helper do
   describe 'meta_tags_alternate_config' do
     before do
       @available_locales = I18n.available_locales
-      I18n.available_locales = [:en, :es]
+      I18n.available_locales = [:en]
     end
 
     after do
@@ -36,8 +36,7 @@ RSpec.describe ApplicationHelper, type: :helper do
 
     it 'returns multilingual links for search engines' do
       expect(helper.meta_tags_alternate_config).to eq({
-        en: root_url(locale: :en),
-        es: root_url(locale: :es)
+        en: root_url(locale: :en)
       })
     end
   end
