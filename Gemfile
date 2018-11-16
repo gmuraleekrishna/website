@@ -7,6 +7,11 @@ gem 'rails', '5.1.5'
 # App server
 gem 'puma', '~> 3.0'
 
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
+gem "sprockets", ">= 3.7.2"
+gem "ffi", ">= 1.9.24"
+
 # Styles
 gem 'sass-rails', '~> 5.0'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass'
