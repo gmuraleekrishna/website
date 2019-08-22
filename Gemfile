@@ -11,6 +11,8 @@ gem "rack", ">= 2.0.6"
 gem "loofah", ">= 2.2.3"
 gem "sprockets", ">= 3.7.2"
 gem "ffi", ">= 1.9.24"
+gem "nokogiri", ">= 1.10.4"
+gem "yard", ">= 0.9.20"
 
 # Styles
 gem 'sass-rails', '~> 5.0'
@@ -36,5 +38,4 @@ end
 
 group :development do
   gem 'web-console'
-  gem 'yard', require: false
 end
