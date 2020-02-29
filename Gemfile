@@ -5,7 +5,7 @@ ruby '2.5.1'
 gem 'rails', '5.1.5'
 
 # App server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 
 gem "rack", ">= 2.0.6"
 gem "loofah", ">= 2.2.3"
