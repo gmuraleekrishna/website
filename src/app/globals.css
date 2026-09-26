@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Both themes are defined here and mapped into Tailwind via
+   @theme inline, so `bg-surface` / `text-muted` adapt automatically.
+--------------------------------------------------------------------------- */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f7f9;
+  --surface: #ffffff;
+  --surface-hover: #f6f7f9;
+  --fg: #0b0f16;
+  --fg-strong: #000000;
+  --muted: #5b6577;
+  --subtle: #8b95a7;
+  --border: #e3e7ed;
+  --border-strong: #cfd6e0;
+  --accent: #0d6efd;
+  --accent-fg: #ffffff;
+  --accent-soft: #e8f1ff;
+  --ring: #0d6efd;
+  --grid: rgb(11 15 22 / 0.05);
+}
+
+.dark {
+  --bg: #07090d;
+  --bg-soft: #0b0e14;
+  --surface: #0e1219;
+  --surface-hover: #141922;
+  --fg: #e8ecf3;
+  --fg-strong: #ffffff;
+  --muted: #98a3b6;
+  --subtle: #6b7688;
+  --border: #1d2430;
+  --border-strong: #2b3442;
+  --accent: #4d9dff;
+  --accent-fg: #04101f;
+  --accent-soft: #10233c;
+  --ring: #4d9dff;
+  --grid: rgb(255 255 255 / 0.045);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-fg: var(--fg);
+  --color-fg-strong: var(--fg-strong);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border-base: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky header does not cover them. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Subtle engineering-style grid used behind the hero. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  .section {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
