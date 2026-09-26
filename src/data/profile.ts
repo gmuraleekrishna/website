@@ -15,17 +15,13 @@ export const profile = {
   highlights: [
     "Productionising Generative AI",
     "Agentic AI & LLM evaluation",
-    "Scalable data & lakehouse platforms",
+    "LLM Optimisation",
   ],
   links: {
     github: "https://github.com/gmuraleekrishna",
     linkedin: "https://linkedin.com/in/gmuraleekrishna",
-    email: "mailto:gmuraleekrishna@gmail.com",
-    resume: "/resume.docx",
-  },
-  contact: {
-    phone: "+61 468 467 963",
-    phoneHref: "tel:+61468467963",
+    email: "mailto:gmuraleekrishna@outlook.com",
+    resume: "/muraleekrishnagopinathan_cv.pdf",
   },
 } as const;
 
@@ -151,12 +147,19 @@ export const experience: Role[] = [
 // Research & publications
 // ---------------------------------------------------------------------------
 
+export type Link = {
+  label: string;
+  href: string;
+};
+
 export type Publication = {
   title: string;
   venue: string;
   year: string;
   tags: string[];
   note?: string;
+  /** Paper, preprint, code or repository links. */
+  links?: Link[];
 };
 
 export const publications: Publication[] = [
@@ -165,12 +168,21 @@ export const publications: Publication[] = [
     venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024)",
     year: "2024",
     tags: ["Robotics", "Computer Vision", "Language Modelling"],
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2409.05593" },
+      { label: "IEEE Xplore", href: "https://ieeexplore.ieee.org/document/10802128/" },
+      { label: "Code", href: "https://github.com/gmuraleekrishna/StratXplore" },
+    ],
   },
   {
-    title: "Spatially-Aware Speaker for Vision Language Navigation Instruction Generation",
+    title: "Spatially-Aware Speaker for Vision-and-Language Navigation Instruction Generation",
     venue: "Annual Meeting of the Association for Computational Linguistics (ACL 2024)",
     year: "2024",
     tags: ["Generative AI", "Transformers", "Computer Vision"],
+    links: [
+      { label: "ACL Anthology", href: "https://aclanthology.org/2024.acl-long.734/" },
+      { label: "Code", href: "https://github.com/gmuraleekrishna/SAS" },
+    ],
   },
   {
     title: "Gesture Control of Boston Dynamics Spot using XRAI Vision Glasses for Defence Applications",
@@ -184,6 +196,7 @@ export const publications: Publication[] = [
     venue: "Digital Image Computing: Techniques and Applications (DICTA 2021)",
     year: "2021",
     tags: ["Robotics", "Computer Vision"],
+    links: [{ label: "IEEE Xplore", href: "https://ieeexplore.ieee.org/document/9647182/" }],
   },
   {
     title: "Solving occlusion in object detection using multiple camera views",
@@ -211,6 +224,8 @@ export type Qualification = {
   period: string;
   detail?: string;
   topics: string[];
+  /** e.g. a link to the deposited thesis. */
+  link?: Link;
 };
 
 export const education: Qualification[] = [
@@ -220,6 +235,10 @@ export const education: Qualification[] = [
     period: "Jan 2021 – Sep 2025",
     detail: "Vice-Chancellor's PhD by Research Scholarship",
     topics: ["Robotics", "Computer Vision", "Machine Learning", "NLP", "Generative AI"],
+    link: {
+      label: "View thesis",
+      href: "https://ro.ecu.edu.au/theses/2894/",
+    },
   },
   {
     degree: "Master of Engineering, Mechatronics Engineering",
@@ -289,6 +308,8 @@ export type Project = {
   stars: number;
   url: string;
   topics: string[];
+  /** Paper or preprint for research projects, shown alongside the repo link. */
+  paper?: Link;
 };
 
 export const featuredProjects: Project[] = [
@@ -300,15 +321,17 @@ export const featuredProjects: Project[] = [
     stars: 2,
     url: "https://github.com/gmuraleekrishna/StratXplore",
     topics: ["robotics", "computer-vision", "nlp"],
+    paper: { label: "arXiv", href: "https://arxiv.org/abs/2409.05593" },
   },
   {
     name: "SAS",
     description:
-      "Python project and the most actively maintained repository in my account — an experimental sandbox for applied machine learning work.",
+      "Spatially-Aware Speaker — the ACL 2024 model that generates instructions for vision-and-language navigation, combining structural and semantic knowledge of the environment. Built on the Matterport3D simulator.",
     language: "Python",
     stars: 4,
     url: "https://github.com/gmuraleekrishna/SAS",
-    topics: ["python", "machine-learning"],
+    topics: ["nlp", "vision-language-navigation", "pytorch"],
+    paper: { label: "ACL 2024", href: "https://aclanthology.org/2024.acl-long.734/" },
   },
   {
     name: "semantic-segmentation",

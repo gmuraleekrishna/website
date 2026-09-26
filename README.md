@@ -28,7 +28,7 @@ You do not need to touch any component to change the site content:
 | What                | What to edit                                        |
 | ------------------- | --------------------------------------------------- |
 | Name, role, summary | `profile`                                            |
-| Email, phone, links | `profile.links`, `profile.contact`                    |
+| Email, GitHub, LinkedIn, CV | `profile.links`                             |
 | Work history        | `experience`                                         |
 | Publications        | `publications`                                       |
 | Degrees             | `education`                                          |
@@ -56,6 +56,14 @@ build never breaks because of a remote outage.
 To show different repositories, change `LIMIT` in `src/lib/github.ts`, or
 exclude names by adding them to the `featuredNames` filter in
 `src/components/projects.tsx`.
+
+## Contact channels
+
+The cards in the Contact section come from the `channels` array at the top of
+`src/components/contact.tsx` — add or remove entries there. Each needs a
+`label`, a display `value`, an `href`, and an icon from
+`src/components/icons.tsx`. Links starting with `http` automatically open in a
+new tab; `mailto:` and `tel:` links stay in place.
 
 ## Theming
 

@@ -59,6 +59,19 @@ function ProjectCard({ project }: { project: Project }) {
         ) : null}
       </div>
 
+      {/* Sits above the stretched card link so it stays independently clickable. */}
+      {project.paper ? (
+        <a
+          href={project.paper.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative z-10 mt-3 inline-flex w-fit items-center gap-1 rounded-md border border-border-base bg-bg px-2 py-1 font-mono text-[11px] text-muted transition-colors hover:border-border-strong hover:text-accent"
+        >
+          {project.paper.label}
+          <ArrowUpRightIcon className="size-3" />
+        </a>
+      ) : null}
+
       {/* Stretched link keeps the whole card clickable. */}
       <a
         href={project.url}

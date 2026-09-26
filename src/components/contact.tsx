@@ -1,11 +1,11 @@
 import { profile } from "@/data/profile";
 import { Section } from "./section";
-import { ArrowUpRightIcon, GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon, PinIcon } from "./icons";
+import { ArrowUpRightIcon, GitHubIcon, LinkedInIcon, MailIcon, PinIcon } from "./icons";
 
 const channels = [
   {
     label: "Email",
-    value: "gmuraleekrishna@gmail.com",
+    value: "gmuraleekrishna@outlook.com",
     href: profile.links.email,
     icon: MailIcon,
   },
@@ -20,12 +20,6 @@ const channels = [
     value: "linkedin.com/in/gmuraleekrishna",
     href: profile.links.linkedin,
     icon: LinkedInIcon,
-  },
-  {
-    label: "Phone",
-    value: profile.contact.phone,
-    href: profile.contact.phoneHref,
-    icon: PhoneIcon,
   },
 ];
 

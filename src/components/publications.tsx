@@ -1,5 +1,21 @@
 import { education, publications } from "@/data/profile";
 import { Section } from "./section";
+import { ArrowUpRightIcon } from "./icons";
+
+/** Small outbound link chip, e.g. "arXiv", "Code", "IEEE Xplore". */
+function LinkChip({ label, href }: { label: string; href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1 rounded-md border border-border-base bg-bg px-2 py-1 font-mono text-[11px] text-muted transition-colors hover:border-border-strong hover:text-accent"
+    >
+      {label}
+      <ArrowUpRightIcon className="size-3" />
+    </a>
+  );
+}
 
 export function Publications() {
   return (
@@ -33,6 +49,15 @@ export function Publications() {
                 </li>
               ))}
             </ul>
+            {pub.links?.length ? (
+              <ul className="mt-4 flex flex-wrap gap-1.5 border-t border-border-base pt-4">
+                {pub.links.map((link) => (
+                  <li key={link.href}>
+                    <LinkChip label={link.label} href={link.href} />
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </li>
         ))}
       </ol>
@@ -69,6 +94,11 @@ export function Publications() {
                   </li>
                 ))}
               </ul>
+              {qual.link ? (
+                <div className="mt-4 border-t border-border-base pt-4">
+                  <LinkChip label={qual.link.label} href={qual.link.href} />
+                </div>
+              ) : null}
             </li>
           ))}
         </ul>
