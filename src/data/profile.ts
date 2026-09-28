@@ -164,6 +164,16 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    title: "PhD Thesis: Toward embodied navigation through vision and language",
+    venue: "Edith Cowan University",
+    year: "2025",
+    tags: ["Robotics", "Computer Vision", "Language Modelling", "Reinforcement Learning", "Simulation"],
+    links: [
+      { label: "PDF", href: "https://ro.ecu.edu.au/cgi/viewcontent.cgi?article=3898&context=theses" },
+      { label: "Research Online", href: "https://ro.ecu.edu.au/theses/2894/" },
+    ],
+  },
+  {
     title: "StratXplore: Strategic Novelty-seeking and Instruction-aligned Exploration for Vision and Language Navigations",
     venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024)",
     year: "2024",
